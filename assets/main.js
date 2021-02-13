@@ -11,6 +11,12 @@ function addHumanText(text){
 
     const chatBox = document.createElement("p");
     chatBox.classList.add("voice2text");
+
+    const chatText =document.createTextNode(text);
+    chatBox.appendChild(chatText)
+
+    chatContainer.appendChild(chatBox)
+    return chatContainer;
 }
 
 recorder.onstart =() => {
@@ -22,7 +28,10 @@ recorder.onresult = (event) => {
 
 const resultIndex = event.resultIndex;
 const transcript = event.results[resultIndex][0].transcript;
-voice2text.textContent = transcript;
+//voice2text.textContent = transcript;
+
+var element = document.getElementById("container");
+element.appendChild(addHumanText(transcript));
 
 };
 
