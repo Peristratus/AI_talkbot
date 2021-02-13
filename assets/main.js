@@ -19,19 +19,64 @@ function addHumanText(text){
     return chatContainer;
 }
 
+function addBotText(text) {
+const chatContainer1 = document.createElement("div");
+    chatContainer1.classList.add("chat-container");
+    chatContainer1.classList.add("darker");
+    
+    const chatBox1 = document.createElement("p");
+    chatBox1.classList.add("voice2text");
+
+    const chatText1 =document.createTextNode(text);
+    chatBox1.appendChild(chatText1)
+
+    chatContainer1.appendChild(chatBox1)
+    return chatContainer1;
+
+}
+
+function botVoice(message){
+   const speech = new SpeechSynthesisUtterance();
+   speech.text = "Sorry, I did not understand that!";
+
+   if (message.includes('how are you')) {
+       speech.text = "I am fine, thanks. How are you ?";
+     }  
+
+      if (message.includes('hello')) {
+       speech.text = "I am fine, thanks. How are you ?";
+     }  
+
+   if (message.includes('fine')) {
+       speech.text = "Nice to hear that, how can i assist you today ?";
+   }
+
+    if (message.includes('sick')) {
+       speech.text = "what is wrong with you ?";
+   }
+
+   if (message.includes('temperature')) {
+       speech.text = "what is your temperature ?";
+   }
+
+   speech.volume = 1;
+   speech.rate = 1;
+   speech.pitch = 1;
+   window.speechSynthesis.speak(speech);
+   var element = document.getElementById("container");
+   element.appendChild(addBotText(speech.text));
+}
+
 recorder.onstart =() => {
     console.log('Voice activated');
 };
 
 recorder.onresult = (event) => {
-//console.log(event);
-
 const resultIndex = event.resultIndex;
 const transcript = event.results[resultIndex][0].transcript;
-//voice2text.textContent = transcript;
-
 var element = document.getElementById("container");
 element.appendChild(addHumanText(transcript));
+botVoice(transcript);
 
 };
 
