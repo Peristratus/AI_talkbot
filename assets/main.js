@@ -82,11 +82,19 @@ function botVoice(message){
         }
     
     if (message.includes('18th September 1978')){
-               speech.text = " You are a member your doctor's name is Jane Amber, she will be able to see you on the 20th of February 2021 at 15:00";
+               speech.text = " You are a member your doctor's name is Jane Amber, she will be able to see you on the 20th of February 2021 at 15:00. If you accept, say I accept, if you decline say I decline";
+        }
+
+    if (message.includes('I accept')){
+               speech.text = " Your appointment has been booked, I will call you a day before your appointment to remind you.";
+        }
+
+     if (message.includes('I decline')){
+               speech.text = "I will check for another date and get back to you at 647-987-0896, Please say thank you to end this conversation";
         }
     
     if (message.includes('thank you')){
-               speech.text = "Thank you have a nice day and keep safe, always wear a mask and wash your hands, your well beign is important to us?"
+               speech.text = "Thank you have a nice day and keep safe, always wear a mask and wash your hands, your well beign is important to us!"
         }
 
     
