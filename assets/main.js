@@ -68,11 +68,30 @@ function botVoice(message){
        }
 
     if (message.includes('I do')){
-               speech.text = "You may have COVID 19, please go to your nearest emergency hospital, What is your first and last name ?"
+               speech.text = "You may have COVID 19, please go to your nearest emergency hospital, What is your first and last name. ?"
         }
     if (message.includes('Jonathan Martin')) {
-           speech.text = "I see you are a member and your doctor is Jane Korban, I will inform her of your situation, please go to the nearest hospital !";
+           speech.text = "What is your date of birth, starting with day, month and year so I can pull up your record";
        }
+
+    if (message.includes('20th October 1956')) {
+           speech.text = "You are a member , your doctors name is Jane Amber , I will inform her of your situation,Thank you and get yourself to the nearest emergency hospital, if you need assistance to get to the hospital say I need assistance or say thank you to end this conversation ";
+
+       }
+
+    if (message.includes('I need assistance')){
+               speech.text = "I have dispatched a paramedic unit to your address, can you give then access to your house or are you incapacitated ? If so then say I am incapacitated or say I can open my front door.";
+
+        }
+
+    if (message.includes('I am incapacitated')){
+               speech.text = "The paramedics are on their way, your front door or window may be broken or damaged to save your life, stay calm and stay on the line I will inform you when they arrive.";
+        }
+
+    if (message.includes('I can open my front door')){
+               speech.text = "The paramedics are on their way, stay calm, I will call you back when they arrive.";
+        }
+
     if (message.includes('no')){
                speech.text = " That's good, will you like me to do something else for you today ? If you want me to book an appointment with your doctor say your first and last name, or say thank you to end this conversation ?";
         }
@@ -84,6 +103,7 @@ function botVoice(message){
     if (message.includes('18th September 1978')){
                speech.text = " You are a member, your doctor's name is Jane Amber, she will be able to see you on the 20th of February 2021 at 15:00. If you accept, say I accept, if you decline say I decline";
         }
+        
 
     if (message.includes('I accept')){
                speech.text = " Your appointment has been booked, I will call you a day before your appointment to remind you.";
