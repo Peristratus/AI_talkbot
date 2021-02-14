@@ -38,7 +38,7 @@ const chatContainer1 = document.createElement("div");
 function botVoice(message){
    const speech = new SpeechSynthesisUtterance();
    speech.text = "Sorry, I did not understand that!";
-
+   // Key words
    if (message.includes('how are you')) {
        speech.text = "I am fine, thanks. How are you ?";
      }  
@@ -62,6 +62,21 @@ function botVoice(message){
    if (message.includes('temperature')) {
        speech.text = "what is your temperature ?";
     }
+
+    if (message.includes(' High temperature')) {
+       speech.text = "what is your temperature ?";
+    }
+
+    if (message.includes(' high blood pressure')) {
+       speech.text = "what is your blood pressure ? If it is greater than 160/100 say greater , or say the same value ";
+    }
+
+    if (message.includes('appointment')) {
+       speech.text = "what is the last four digits of your membership card ?";
+    }
+
+
+   //end Key Words 
 
     if (message.includes('40 Celsius')) {
            speech.text = "That is a high temperature, do you have flu like symptoms, if you do then say I do or say no ?";
@@ -115,6 +130,10 @@ function botVoice(message){
     
     if (message.includes('thank you')){
                speech.text = "Thank you have a nice day and keep safe, always wear a mask and wash your hands, your well beign is important to us!"
+        }
+
+    if (message.includes('6479')){
+               speech.text = "Thank you, your name is Samantha Jones, your doctor is Peter Dominic, what is the reason for your visit, please say follow up, or say urgent, or say new appointment !"
         }
 
     
