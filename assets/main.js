@@ -82,7 +82,7 @@ function botVoice(message){
         }
     
     if (message.includes('18th September 1978')){
-               speech.text = " You are a member your doctor's name is Jane Amber, she will be able to see you on the 20th of February 2021 at 15:00. If you accept, say I accept, if you decline say I decline";
+               speech.text = " You are a member, your doctor's name is Jane Amber, she will be able to see you on the 20th of February 2021 at 15:00. If you accept, say I accept, if you decline say I decline";
         }
 
     if (message.includes('I accept')){
