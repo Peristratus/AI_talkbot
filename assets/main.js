@@ -39,35 +39,24 @@ function botVoice(message){
    const speech = new SpeechSynthesisUtterance();
    speech.text = "Sorry, I did not understand that!";
    // Key words
-   if (message.includes('how are you')) {
+   if (message.includes('how are you') || message.includes('hi') || message.includes('hello') ) {
        speech.text = "I am fine, thanks. How are you ?";
      }  
 
-    if (message.includes('hi')) {
-       speech.text = "I am fine, thanks. How are you ?";
-     }  
-
-    if (message.includes('hello')) {
-       speech.text = "I am fine, thanks. How are you ?";
-     }  
-
-    if (message.includes('fine')) {
+    if (message.includes('fine') || message.includes('ok') || message.includes('good')) {
        speech.text = "Nice to hear that, how can i assist you today ?";
     }
 
-    if (message.includes('sick')) {
+    if (message.includes('sick') || message.includes('bad')) {
        speech.text = "what is wrong with you ?";
    }
+   
 
-   if (message.includes('temperature')) {
-       speech.text = "what is your temperature ?";
+   if (message.includes('temperature') || message.includes('High temprature')) {
+       speech.text = "what is your temperature ? If it is between 39 to  50 Celsius then say 39 to 50 Celsius";
     }
 
-    if (message.includes(' High temperature')) {
-       speech.text = "what is your temperature ?";
-    }
-
-    if (message.includes(' high blood pressure')) {
+    if (message.includes(' high blood pressure') || message.includes(' blood pressure is high')) {
        speech.text = "what is your blood pressure ? If it is greater than 160/100 say greater , or say the same value ";
     }
 
@@ -75,10 +64,14 @@ function botVoice(message){
        speech.text = "what is the last four digits of your membership card ?";
     }
 
+    if (message.includes('continue')) {
+       speech.text = "How can I help you today ?";
+    }
+
 
    //end Key Words 
 
-    if (message.includes('40 Celsius')) {
+    if (message.includes('39 to 50 Celsius') ) {
            speech.text = "That is a high temperature, do you have flu like symptoms, if you do then say I do or say no ?";
        }
 
@@ -121,23 +114,46 @@ function botVoice(message){
         
 
     if (message.includes('I accept')){
-               speech.text = " Your appointment has been booked, I will call you a day before your appointment to remind you.";
+               speech.text = " Your appointment has been booked, I will call you a day before your appointment to remind you, Please say thank you, to end this conversation or say continue to restart the conversation. ";
         }
 
      if (message.includes('I decline')){
-               speech.text = "I will check for another date and get back to you at 647-987-0896, Please say thank you to end this conversation";
+               speech.text = "I will check for another date and get back to you via-email and a telephone call, Please say thank you, to end this conversation or say continue to restart the conversation.";
         }
     
-    if (message.includes('thank you')){
+    if (message.includes('thank you' )){
                speech.text = "Thank you have a nice day and keep safe, always wear a mask and wash your hands, your well beign is important to us!"
         }
 
     if (message.includes('6479')){
-               speech.text = "Thank you, your name is Samantha Jones, your doctor is Peter Dominic, what is the reason for your visit, please say follow up, or say urgent, or say new appointment !"
+               speech.text = "Thank you, your name is Samantha Jones, your doctor is Peter Dominic, what is the reason for your visit, please say follow up, or say urgent, or say new !"
         }
 
-    
+    if (message.includes('urgent')) {
+                   speech.text = "Your doctor will give you a call at 16:45 hours today. Say thank you to end this conversation or say continue to restart the conversation ?  "
+        }
+    if (message.includes('follow up')) {
+                   speech.text = "Your doctor will be able to see you on the 14th of March 2021, If you accept, say I accept, if you decline say I decline ?  "
+        }
 
+    if (message.includes('new')) {
+                   speech.text = "Your doctor will be able to see you on the 19th of April 2021, If you accept, say I accept, if you decline say I decline ?  "
+        }
+    if (message.includes('greater') || message.includes('same value') || message.includes('chest pain') ) {
+                   speech.text = "Do you have chest pains, shortness of breath, extreme fatigue ? If you have one out of two symptoms say 1, if you have two out of three symptoms say 2, if none then say 3 ?  "
+        }
+     if (message.includes('1') || message.includes('2')) {
+                   speech.text = "You may be having a heart attack, do you need assistance to get to the hospital say I need assistance or say I do not need assistance, if I do not hear a response I will dispatch the paramedics to your house, they may have to break into your house to save your life ?"
+        }
+
+    if (message.includes('3')) {
+                   speech.text = " If you have sympthons that are non life threatening, I advise you to book an appointment to see your doctor, if you want to book an appointment, say appointment, or say thank you to end this conversation, or say continue to restart a new conversation ?"
+        }
+
+     if (message.includes('I do not need assistance')) {
+                   speech.text = "Get yourself to the nearest emergency hospital , I will inform your doctor of your situation. ?  "
+        }
+    
    speech.volume = 1;
    speech.rate = 1;
    speech.pitch = 1;
