@@ -48,9 +48,8 @@ function botVoice(message){
     }
 
     if (message.includes('sick') || message.includes('bad')) {
-       speech.text = "what is wrong with you ?";
+       speech.text = "what is wrong with you and how can I help you ?";
    }
-   
 
    if (message.includes('temperature') || message.includes('High temprature')) {
        speech.text = "what is your temperature ? If it is between 39 to  50 Celsius then say 39 to 50 Celsius";
@@ -68,23 +67,31 @@ function botVoice(message){
        speech.text = "How can I help you today ?";
     }
 
+    if (message.includes('not feel well') || message.includes('not feel good') || message.includes('not feeling too good') || message.includes('not feeling too well') || message.includes('not well') ||  message.includes('not feeling well')) {
+       speech.text = "What is wrong with you and how can I help you today ?";
+    }
+
 
    //end Key Words 
 
-    if (message.includes('39 to 50 Celsius') ) {
-           speech.text = "That is a high temperature, do you have flu like symptoms, if you do then say I do or say no ?";
+    if (message.includes('39 to 50 Celsius')) {
+           speech.text = "That is a high temperature, do you have flu like symptoms, if you do then say positive or say negative ?";
        }
 
-    if (message.includes('I do')){
+    if (message.includes('positive')){
                speech.text = "You may have COVID 19, please go to your nearest emergency hospital, What is your first and last name. ?"
         }
+
+    if (message.includes('negative')){
+               speech.text = " That's good, will you like me to do something else for you today ? If you want me to book an appointment with your doctor say your first and last name, or say thank you to end this conversation ?";
+        }
+
     if (message.includes('Jonathan Martin')) {
            speech.text = "What is your date of birth, starting with day, month and year so I can pull up your record";
        }
 
     if (message.includes('20th October 1956')) {
            speech.text = "You are a member , your doctors name is Jane Amber , I will inform her of your situation,Thank you and get yourself to the nearest emergency hospital, if you need assistance to get to the hospital say I need assistance or say thank you to end this conversation ";
-
        }
 
     if (message.includes('I need assistance')){
@@ -98,10 +105,6 @@ function botVoice(message){
 
     if (message.includes('I can open my front door')){
                speech.text = "The paramedics are on their way, stay calm, I will call you back when they arrive.";
-        }
-
-    if (message.includes('no')){
-               speech.text = " That's good, will you like me to do something else for you today ? If you want me to book an appointment with your doctor say your first and last name, or say thank you to end this conversation ?";
         }
 
     if (message.includes('Philip Johnson')){
@@ -139,14 +142,14 @@ function botVoice(message){
     if (message.includes('new')) {
                    speech.text = "Your doctor will be able to see you on the 19th of April 2021, If you accept, say I accept, if you decline say I decline ?  "
         }
-    if (message.includes('greater') || message.includes('same value') || message.includes('chest pain') ) {
-                   speech.text = "Do you have chest pains, shortness of breath, extreme fatigue ? If you have one out of two symptoms say 1, if you have two out of three symptoms say 2, if none then say 3 ?  "
+    if (message.includes('greater') || message.includes('same value') || message.includes('heart attack') ) {
+                   speech.text = "Do you have chest pains, shortness of breath, extreme fatigue ? If you have any of the symptoms say chest pains, shortness of breath or extreme fatigue, if none then say none ?  "
         }
-     if (message.includes('1') || message.includes('2')) {
+     if (message.includes('chest pains ') || message.includes('shortness of breath') || message.includes('extreme fatigue')) {
                    speech.text = "You may be having a heart attack, do you need assistance to get to the hospital say I need assistance or say I do not need assistance, if I do not hear a response I will dispatch the paramedics to your house, they may have to break into your house to save your life ?"
         }
 
-    if (message.includes('3')) {
+    if (message.includes('none')) {
                    speech.text = " If you have sympthons that are non life threatening, I advise you to book an appointment to see your doctor, if you want to book an appointment, say appointment, or say thank you to end this conversation, or say continue to restart a new conversation ?"
         }
 
