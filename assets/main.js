@@ -67,7 +67,11 @@ function botVoice(message){
        speech.text = "How can I help you today ?";
     }
 
-    if (message.includes('not feel well') || message.includes('not feel good') || message.includes('not feeling too good') || message.includes('not feeling too well') || message.includes('not well') ||  message.includes('not feeling well')) {
+    if (message.includes('asthma attack')) {
+       speech.text = "Is it serious or mild ?";
+    }
+
+    if (message.includes('not feel well') || message.includes('not feel good') || message.includes('not feeling too good') || message.includes('not feeling good') || message.includes('not feeling too well') || message.includes('not well') ||  message.includes('not feeling well')) {
        speech.text = "What is wrong with you and how can I help you today ?";
     }
 
@@ -145,7 +149,7 @@ function botVoice(message){
     if (message.includes('greater') || message.includes('same value') || message.includes('heart attack') ) {
                    speech.text = "Do you have chest pains, shortness of breath, extreme fatigue ? If you have any of the symptoms say chest pains, shortness of breath or extreme fatigue, if none then say none ?  "
         }
-     if (message.includes('chest pains ') || message.includes('shortness of breath') || message.includes('extreme fatigue')) {
+     if (message.includes('chest pains') || message.includes('shortness of breath') || message.includes('extreme fatigue')) {
                    speech.text = "You may be having a heart attack, do you need assistance to get to the hospital say I need assistance or say I do not need assistance, if I do not hear a response I will dispatch the paramedics to your house, they may have to break into your house to save your life ?"
         }
 
@@ -156,6 +160,26 @@ function botVoice(message){
      if (message.includes('I do not need assistance')) {
                    speech.text = "Get yourself to the nearest emergency hospital , I will inform your doctor of your situation. ?  "
         }
+
+    if (message.includes('serious')) {
+       speech.text = "I am dispatching the paramedics to your location, stay calm and try to breathe normaly, stay on the line and I will inform you when they get to your location ? ";
+    }
+
+    if (message.includes('mild')) {
+       speech.text = " Are you able to get help or should I call the paramedics, If you can get help say I can get help, or say call the paramedics ?";
+    }
+
+    if (message.includes('call the paramedics')) {
+       speech.text = " Are you able to open your front door or are you incapacitated ? If so say I am incapacitated or say I can open the front door.";
+    }
+
+    if (message.includes('I can get help')) {
+       speech.text = " I will stay on the line until you say I have got help.";
+    }
+
+    if (message.includes('I have got help')) {
+       speech.text = " Thank you for the information , I will inform your doctor of your situation !";
+    }
     
    speech.volume = 1;
    speech.rate = 1;
